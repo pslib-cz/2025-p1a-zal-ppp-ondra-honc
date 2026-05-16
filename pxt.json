@@ -1,5 +1,5 @@
 {
-    "name": "ppp-pokemon",
+    "name": "pxt-pokemon-hra",
     "description": "",
     "dependencies": {
         "device": "*",
