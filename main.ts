@@ -285,7 +285,7 @@ const GameLibrary = {
     //Základní monstra hráče
     baseMonsters:
         [
-            { name: 'Opice', level: 1, xp: 0, maxXp: 100, maxHealth: 800, health: 800, minDmg: 800, maxDmg: 1400, icon: assets.image`forestMonkey`, gender: MonsterGender.F },
+            { name: 'Opice', level: 1, xp: 0, maxXp: 100, maxHealth: 80, health: 80, minDmg: 8, maxDmg: 14, icon: assets.image`forestMonkey`, gender: MonsterGender.F },
             { name: 'Had', level: 1, xp: 0, maxXp: 100, maxHealth: 50, health: 50, minDmg: 15, maxDmg: 25, icon: assets.image`forestSnake`, gender: MonsterGender.M },
             { name: 'Krab', level: 1, xp: 0, maxXp: 100, maxHealth: 120, health: 120, minDmg: 4, maxDmg: 8, icon: assets.image`hermitCrab`, gender: MonsterGender.M },
         ],
@@ -302,8 +302,8 @@ const GameLibrary = {
     //Bossfighty
     bossfight:
         [
-            { name: "Godzilla", maxHealth: 500, health: 500, minDmg: 40, maxDmg: 80, icon: assets.image`miniGodzilla`, gender: MonsterGender.F },
-            { name: "Houba", maxHealth: 250, health: 250, minDmg: 60, maxDmg: 90, icon: assets.image`mushroom`, gender: MonsterGender.F },
+            { name: "Godzilla", maxHealth: 350, health: 350, minDmg: 40, maxDmg: 60, icon: assets.image`miniGodzilla`, gender: MonsterGender.F },
+            { name: "Houba", maxHealth: 200, health: 200, minDmg: 50, maxDmg: 70, icon: assets.image`mushroom`, gender: MonsterGender.F },
         ],
     //Background imgs
     background:
