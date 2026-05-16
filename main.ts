@@ -1,159 +1,3 @@
-const godzilla1 = img`
-..................bb..bbbbbbbbbbbbbbbbbbb....................................
-.................bb5bbb5555555555555555bbbbb.................................
-.................b55b5555555555555555555555bbb......bbc......................
-................bb555555555555555555555555555bbb..cbbcc......................
-................b555555555555555555555555555555bccbbccc......................
-................c55555555555555555555555555555555ccccc.......................
-................c5555b555555555bd55555555555555555cccc.......................
-................c5555b555555555bb555555555555555555ccc.......................
-................c555555555555555555555555bccc5555555cc.....ccc...............
-................c55555bccccc5555555555555ccc1c5555555ccccccbbc...............
-.................c555bccccccccb5555555555dcbbc55555555cccbbbcc...............
-.................c55bddcccccccccb1555555555555555555555ccbccc................
-..................c5bcdcccccccccc11b55555555555555555555ccccc................
-..................c5ccbcccccccccc11cc5555555555555555555dcccc................
-...................cccccccccccccc1bccb1555555bb5555555555dcc.................
-....................cccccccccccccccccb1155555b55555555555dcc.................
-....................5ccccccccccccccccc1bccccb555555555555ddc.................
-....................55cccccccccccccccccccccc555555555555dddccccbbc...........
-....................c55ccccccb333cc333bcccc555555555555555ddccbbcc...........
-....................cc55dccc3333bc333333ccb555555555555555ddcccccc...........
-.....................cc555c33333b3333333cc555555555555555dddccccc............
-...............cccc...ccb533333b33333333c5555555555555555d55dcccc............
-..............c55bcc...cb533333b3333333b55d55555555555555555dcccc............
-..............c55bbc...cd533333b33b133b55dd5555555555555555dddccc............
-............ccc55bdd...c5513333333b11355dd55555555555555ddddddcc.............
-...........c55bb5bdd...c5513333333b1155dd5555555555555555dddddcc.............
-...........c55dbbbdd...c5533333333b555dd55555555555555555ddddddccc...........
-...........c555bddbbc..cb553133133555dd555555555cccc5555dddddddcccccc........
-............bbbbddb5dc..c55513313555dd5555555555c55ccccddddddddcccccc........
-...........cdd555b55dcc..cd5555555dbdd5555555555cb5555ccccdddddccccc.........
-.........ccbbb555bbbb5c..cbbbbbbbbbddd5555555ccccbb55bb5dbcddddbccc..........
-.........c555bb5555555ccccddbbbbbddddd5555555c55ccbbbb5555bcddddcc...........
-.........c5555b555555bdbb5dddddddddddd5555555bb5555db5555555cdddc............
-..........cbbb555555b5dbb5ddddddddddd555555555bb55ddbccbb555ccddcc...........
-...........cbb55555d55bb555dddddddddd5555555555bc5ddddddbb555cdddcc..........
-............cccddddd55b5555ddddddddd555555555555c55dddbbbb555cbdddc..........
-..............ccdddddbb555555dddddd5555555555555cc5ddbb5555555bbbddc.........
-.................cdddb555555555555555555555555555c55db55555555dbbbdcc........
-..cc.............ccddb555555555555555555555555555cc555bbb555555dddddc........
-..c5bb............ccb55555555555555555555555555555c55555dd555555ddddc........
-..c55b.............cddb5555555555555555555555555555dcc5555dd5555555dddc......
-..cb5bb.............dbd555555555555555555555555555d5dc555dd55555555dddc......
-..cb55b.............dbd5555555555555555555555555555ddcc555555555555dddc......
-..cb55b.............cbd555555555555555555555555555ddddc555555555555ddcc......
-..c555b.............cbdd5555555555555555555555555d5dddcc5555555555dddcc......
-.cb555bb.............cdd555555555555555555555555d55ddddccc5555555dddcc.......
-.cb555bb.............cddd555555555555555555d555d55dddddddccc555ddddcc........
-.c55555b...........c.cdd55555dd555555555555555dddddddddddddcccccccccc........
-cb55555b..........cc.cbdd5555dd5555555555555dddddddddddddddddddddddccc.......
-cb55555b........bccbccbddd5d55555555dd55555555dddddddddddddddddddddcccc......
-c5555555bb....bbbddbccbbddddddd555555555ddd55dddddddddddddddddddddbccc.......
-c55555555bbbbbbddddccbbbbdddd55ddd5555ddddddddddddddddddddddddddddbcc........
-cd5555555555ddddddc5bbd5555dd555dd5555d55ddddddddddddddddd55ddddbbbc.........
-cd5555555555dddddcc5b5555555ddddddddddd55dddddddddddddddd55ddddddbbc.........
-cdd55555555ddddddc55555555555dddddddddddddddddddddddddddd5dd5555ddbc.........
-cddd555555ddddddcc55555555555ddddddddddddddddddddddddddddd55555555dc.........
-ccddddddddddddddc555555555555dddddddddddddddddddddddddd55d555555555cc........
-.cddddddddddddddc555555555555dddddddddddddddddddddddddd5555555555555c........
-.ccddddddddddddcc55555555555ddddddddddddddddddddddddddddd55555555555cc.......
-..ccdddddddddddcc55555555555ddddddddddddddddddddddddddddd555555555555c.......
-...ccddddddddddccd55555555555dddddddddddddddddddddddddddd555555555555c.......
-....cccddddddddcdddd555555555ddddddddddddddddddbddddddddd555555555555cc......
-......cccdddddccdddd5555dd55dddddddddddddddddddbdddddddd5d555555555555c......
-........cccccccddddd55dddddddddddddbbddddddddddbddddddddd5555555555555c......
-............ccc55555ddddddddddddddbbddddddddddbbbdddddddddd55555555555c......
-.............c555555dddddddddddddccccccccccccbbbbddddddddddd555555555dc......
-...........ccdddccd5ddddddddddddccc........ccccbbbdddddddddddd5555555dcc.....
-..........ccdddccddd5dddddddddccc.............cccbddddddddddddd55555ddccc....
-..........ccdddcdddc55ddddddccc..................ccdddddddddddddddddddccc....
-..........ccccccddcc55dddccccc....................ccdddddddddddd5555555dc....
-...............cdc..ddcddcc........................cccddddddddd55555555dcc...
-...............cc...cccddc...........................ccccccdddd555ddddccddcc.
-....................cccdcc...............................ccddddddccddddccddcc
-.......................ccc................................cccccdddccddddcddcc
-............................................................ccccdddccccdccccc
-...............................................................ccccc..ccc....
-`;
-const godzilla2 = img`
-....................bbbbbbbbbbbbbbbbbb.......................................
-....................5555555555555555bbbbb....................................
-....................55555555555555555555bbb......bbc.........................
-...................b5555555555555555555555bbb..cbbcc.........................
-.................bbb555555555555555555555555bccbbccc.........................
-................bb5555555555555555555555555555ccccc..........................
-...............bb55555555555bd55555555555555555cccc..........................
-..............bb555555555555bb555555555555555555ccc..........................
-..............b55555555555555555555555bccc5555555cc.....ccc..................
-.............bb555b5ccccc5555555555555ccc1c5555555ccccccbbc..................
-.............b5555b5cccccccb5555555555dcbbc55555555cccbbbcc..................
-.............c555555cccccccccb1555555555555555555555ccbccc...................
-.............c55555bcccccccccc11b55555555555555555555ccccc...................
-.............c5555bccccccccccc11cc5555555555555555555dcccc...................
-.............c555bddcccccccccc1bccb1555555bb5555555555dcc....................
-.............c555bcdccccccccccccccb1155555b55555555555dcc....................
-..............c55ccbccccccccccccccc1bccccb555555555555ddc....................
-..............c55cccccccccccccccccccccccc555555555555dddccccbbc..............
-...............c5cccccccccb333cc333bcccc555555555555555ddccbbcc..............
-...............c55cc5dccc3333bc333333ccb555555555555555ddcccccc..............
-................c55c555c33333b3333333cc555555555555555dddccccc...............
-.................c55cb533333b33333333c5555555555555555d55dcccc...............
-.................cc5cb533333b3333333b55d55555555555555555dcccc...............
-..................cccd533333b33b133b55dd5555555555555555dddccc...............
-...................cc5513333333b11355dd55555555555555ddddddcc................
-....................c5513333333b1155dd5555555555555555dddddcc................
-....................c5533333333b555dd55555555555555555ddddddccc..............
-............cccc....cb553133133555dd555555555cccc5555dddddddcccccc...........
-...........c55bcc....c55513313555dd5555555555c55ccccddddddddcccccc...........
-...........c55bbc.....cd5555555dbdd5555555555cb5555ccccdddddccccc............
-.........ccc55bddc....cbbbbbbbbbddd5555555ccccbb55bb5dbcddddbccc.............
-........c55bb5bdddc.cccddbbbbbddddd5555555c55ccbbbb5555bcddddcc..............
-........c55dbbbdddccbb5dddddddddddd5555555bb5555db5555555cdddc...............
-........c555bddbbb5cbb5ddddddddddd555555555bb55ddbccbb555ccddcc..............
-.........bbbbddb555cb555dddddddddd5555555555bc5ddddddbb555cdddcc.............
-........cdd555b555bd5555ddddddddd555555555555c55dddbbbb555cbdddc.............
-......ccbbb555bbbb5d555555dddddd5555555555555cc5ddbb5555555bbbddc............
-......c555bb5555555b55555555555555555555555555c55db55555555dbbbdcc...........
-......c5555b5555555b55555555555555555555555555cc555bbb555555dddddc...........
-.......cbbb555555dbb555555555555555555555555555c55555dd555555ddddc...........
-........cbb55555ddb5ddb5555555555555555555555555555dcc5555dd5555555dddc......
-.........cccddddddb5dbd555555555555555555555555555d5dc555dd55555555dddc......
-...........ccddddb55dbd5555555555555555555555555555ddcc555555555555dddc......
-.................cddcbd555555555555555555555555555ddddc555555555555ddcc......
-..cc.............ccdcbdd5555555555555555555555555d5dddcc5555555555dddcc......
-..c5bb............cc.cdd555555555555555555555555d55ddddccc5555555dddcc.......
-..c55b.............c.cddd555555555555555555d555d55dddddddccc555ddddcc........
-..cb5bb..............cdd55555dd555555555555555dddddddddddddcccccccccc........
-..cb55b..............cbdd5555dd5555555555555dddddddddddddddddddddddccc.......
-..cb55b.............ccbddd5d55555555dd55555555dddddddddddddddddddddcccc......
-..c555b.............ccbbddddddd555555555ddd55dddddddddddddddddddddbccc.......
-.cb555bb............cbbbbdddd55ddd5555ddddddddddddddddddddddddddddbcc........
-.cb555bb............bbd5555dd555dd5555d55ddddddddddddddddd55ddddbbbc.........
-.c55555b...........cb5555555ddddddddddd55dddddddddddddddd55ddddddbbc.........
-cb55555b..........cc555555555dddddddddddddddddddddddddddd5dd5555ddbc.........
-cb55555b........bccb555555555ddddddddddddddddddddddddddddd55555555dc.........
-c5555555bb....bbbddb555555555dddddddddddddddddddddddddd55d555555555cc........
-c55555555bbbbbbddddc555555555dddddddddddddddddddddddddd5555555555555c........
-cd5555555555ddddddc555555555ddddddddddddddddddddddddddddd55555555555cc.......
-cd5555555555dddddcc555555555ddddddddddddddddddddddddddddd555555555555c.......
-cdd55555555ddddddc55555555555dddddddddddddddddddddddddddd555555555555c.......
-cddd555555ddddddcc55555555555ddddddddddddddddddbddddddddd555555555555cc......
-ccddddddddddddddc5555555dd55dddddddddddddddddddbdddddddd5d555555555555c......
-.cddddddddddddddc55555dddddddddddddbbddddddddddbddddddddd5555555555555c......
-.ccddddddddddddcc555ddddddddddddddbbddddddddddbbbdddddddddd55555555555c......
-..ccdddddddddddcc555dddddddddddddccccccccccccbbbbddddddddddd555555555dc......
-...ccddddddddddccd55ddddddddddddccc........ccccbbbdddddddddddd5555555dcc.....
-....cccddddddddcdddd5dddddddddccc.............cccbddddddddddddd55555ddccc....
-......cccdddddccdddd55ddddddccc..................ccdddddddddddddddddddccc....
-........cccccccddddd55dddccccc....................ccdddddddddddd5555555dc....
-............ccc55555ddcddcc........................cccddddddddd55555555dcc...
-.............c555555cccddc...........................ccccccdddd555ddddccddcc.
-...........ccdddccd5cccdcc...............................ccddddddccddddccddcc
-..........ccdddccddd...ccc................................cccccdddccddddcddcc
-..........ccdddcdddc........................................ccccdddccccdccccc
-..........ccccccddcc...........................................ccccc..ccc....
-`;
 //Definice vlastních typů pro kolize a mazaní UI
 namespace SpriteKind {
     export const UI = SpriteKind.create()          // Pozadí menu, boxy, dialogová okna
@@ -213,6 +57,7 @@ type MonsterBase = {
     gender: MonsterGender,
 }
 
+
 type PlayerMonster = MonsterBase & {
     level: number,
     xp: number,
@@ -227,104 +72,123 @@ type Quest = {
     xpReward: number,
 }
 
-
-const COLORS: { [key: string]: number } = {
-    BLACK: 15,
-    GREEN: 7,
-    RED: 2,
-    YELLOW: 5,
-    LIGHT_BLUE: 9,
-    BEIGE: 13,
-    BROWN: 14,
+const enum COLORS {
+    BLACK = 15,
+    GREEN = 7,
+    RED = 2,
+    YELLOW = 5,
+    LIGHT_BLUE = 9,
+    BEIGE = 13,
+    BROWN = 14,
+    WHITE = 1,
 }
 
-const UI_CONFIG: { [key: string]: number } = {
-    PLAYER_POS_X: 40,
-    PLAYER_POS_Y: 75,
-    
-    ENEMY_POS_X: 120,
-    ENEMY_POS_Y: 35,
-    
-    CURSOR_OFFSET_Y: 8,
-    CURSOR_POS_X: 90,
-    CURSOR_POS_Y: 90,
-    CURSOR_FIGHT_POS_X: 35,
-    CURSOR_FIGHT_POS_Y: 8,
-    CURSOR_RUN_POS_X: 35,
-    CURSOR_RUN_POS_Y: 22,
-    CURSOR_HEAL_POS_X: 37,
-    CURSOR_HEAL_POS_Y: 8,
-    
-    FIGHT_MENU_POS_X: 125,
-    FIGHT_MENU_POS_Y: 105,
-    
-    ENEMY_STATUS_BOX_POS_X: 45,
-    ENEMY_STATUS_BOX_POS_Y: 15,
-    
-    PLAYER_STATUS_BOX_POS_X: 126,
-    PLAYER_STATUS_BOX_POS_Y: 78,
-    
-    ANIMATION_SPEED: 180,
-    WALK_ANIMATION_SPEED: 200,
-    
-    RESET_GHOST_INPUT_PAUSE: 100,
-    TOOK_DMG_PAUSE: 100,
-    ATTACK_PAUSE: 200,
-    INTRO_PAUSE: 250,
-    ANIMATION_SLIDE_PAUSE: 350,
-    BASIC_PAUSE: 500,
-    AI_PAUSE: 800,
-    
-    LOW_HP_CAMERA_THRESHOLD: 0.1,
-    
-    INVENTORY_WIDTH: 150,
-    INVENTORY_HEIGHT: 110,
-    INVENTORY_PIXEL_OFFSET: 4,
-    INVENTORY_HEALTH_BAR_WIDTH: 24,
-    INVENTORY_HEALTH_BAR_HEIGHT: 5,
+const enum UI_CONFIG {
+    PLAYER_POS_X = 40,
+    PLAYER_POS_Y = 75,
 
-    Z_BATTLE_SPRITE: 10,      
-    Z_CURSOR: 25,              
-    Z_PANEL: 100,            
-    Z_PANEL_CONTENT: 101,     
-    Z_PANEL_TEXT: 102,      
-    Z_BANNER: 200,             
-    Z_BESTIARY_ICON: 201,      
-    Z_BESTIARY_TEXT: 202,
+    ENEMY_POS_X = 120,
+    ENEMY_POS_Y = 35,
 
-    SCREEN_CENTER_X: 80,
-    SCREEN_CENTER_Y: 60,
+    CURSOR_OFFSET_Y = 8,
+    CURSOR_POS_X = 90,
+    CURSOR_POS_Y = 90,
+    CURSOR_FIGHT_POS_X = 35,
+    CURSOR_FIGHT_POS_Y = 8,
+    CURSOR_RUN_POS_X = 35,
+    CURSOR_RUN_POS_Y = 22,
+    CURSOR_HEAL_POS_X = 37,
+    CURSOR_HEAL_POS_Y = 8,
 
-    BANNER_WIDTH: 160,
-    BANNER_HEIGHT: 20,
-    BANNER_TEXT_Y: 6,         
-    BANNER_START_X: 240,       
-    BANNER_SLIDE_SPEED: 600,   
-    BANNER_PAUSE: 1000,
-    BANNER_PAUSE_LONG: 1500,
-    BANNER_PAUSE_VERY_LONG: 2000,
+    FIGHT_MENU_POS_X = 125,
+    FIGHT_MENU_POS_Y = 105,
 
-    BATTLE_SPRITE_SCALE: 2,      
-    GODZILLA_SCALE: 0.75,        
-    ATTACK_MOVE_OFFSET: 10,       
-    TILE_SIZE: 16,               
-    NPC_SEPARATION_OFFSET: 4,     
-    PLAYER_MOVE_SPEED: 100,       
-    BIG_BUTTON_SCALE: 0.8,
+    ENEMY_STATUS_BOX_POS_X = 45,
+    ENEMY_STATUS_BOX_POS_Y = 15,
 
-    CRIT_SHAKE_INTENSITY: 8,     
-    LOW_HP_SHAKE_INTENSITY: 4,
+    PLAYER_STATUS_BOX_POS_X = 126,
+    PLAYER_STATUS_BOX_POS_Y = 78,
 
-    INVENTORY_ITEM_SPACING: 50,   
-    INVENTORY_ITEM_Y: 40,        
-    INVENTORY_BAR_OFFSET_Y: 18,
+    ANIMATION_SPEED = 180,
+    WALK_ANIMATION_SPEED = 200,
 
-    SMALL_FONT_HEIGHT: 5,
+    RESET_GHOST_INPUT_PAUSE = 100,
+    TOOK_DMG_PAUSE = 100,
+    ATTACK_PAUSE = 200,
+    INTRO_PAUSE = 250,
+    ANIMATION_SLIDE_PAUSE = 350,
+    BASIC_PAUSE = 500,
+    AI_PAUSE = 800,
 
-    Z_BATTLE_UI: 20,
+    LOW_HP_CAMERA_THRESHOLD_PERCENT = 10,
 
-    PARALLEL_START_DELAY: 10,
-    SIGN_READ_DELAY: 50,
+    INVENTORY_WIDTH = 150,
+    INVENTORY_HEIGHT = 110,
+    INVENTORY_PIXEL_OFFSET = 4,
+    INVENTORY_HEALTH_BAR_WIDTH = 24,
+    INVENTORY_HEALTH_BAR_HEIGHT = 5,
+
+    Z_BATTLE_SPRITE = 10,
+    Z_CURSOR = 20,
+    Z_PANEL = 100,
+    Z_PANEL_CONTENT = 101,
+    Z_PANEL_TEXT = 102,
+    Z_BANNER = 200,
+    Z_BESTIARY_ICON = 201,
+    Z_BESTIARY_TEXT = 202,
+
+    SCREEN_CENTER_X = 80,
+    SCREEN_CENTER_Y = 60,
+
+    BANNER_WIDTH = 160,
+    BANNER_HEIGHT = 20,
+    BANNER_TEXT_Y = 6,
+    BANNER_START_X = 240,
+    BANNER_SLIDE_SPEED = 600,
+    BANNER_PAUSE = 1000,
+    BANNER_PAUSE_LONG = 1500,
+    BANNER_PAUSE_VERY_LONG = 2000,
+
+    BATTLE_SPRITE_SCALE = 2,
+    ATTACK_MOVE_OFFSET = 10,
+    TILE_SIZE = 16,
+    NPC_SEPARATION_OFFSET = 4,
+    PLAYER_MOVE_SPEED = 100,
+    BIG_BUTTON_SCALE_PERCENT = 80,
+
+    CRIT_SHAKE_INTENSITY = 8,
+    LOW_HP_SHAKE_INTENSITY = 4,
+
+    JITTER_PAUSE = 40,
+
+    INVENTORY_ITEM_SPACING = 50,
+    INVENTORY_ITEM_Y = 40,
+    INVENTORY_BAR_OFFSET_Y = 18,
+
+    SMALL_FONT_HEIGHT = 5,
+
+    Z_BATTLE_UI = 20,
+
+    PARALLEL_START_DELAY = 10,
+    SIGN_READ_DELAY = 50,
+
+    QUESTS_START_Y = 20,
+    QUESTS_SPACING = 18,
+    QUESTS_TEXT_X = 80,
+    QUESTS_BAR_WIDTH = 60,
+    QUESTS_BAR_HEIGHT = 3,
+
+    BATTLE_NAME_WIDTH = 50,
+    BATTLE_NAME_HEIGHT = 8,
+    BATTLE_BAR_WIDTH = 35,
+    BATTLE_BAR_HEIGHT = 5,
+    Z_BATTLE_TEXT_BAR = 25,
+
+    HEALTH_BAR_PADDING = 1,
+    HEALTH_BAR_BORDER_REDUCTION = 2,
+
+    GODZILLA_DEATH_SHAKE_LOOPS = 20,
+    GODZILLA_DEATH_SHAKE_MAX_OFFSET = 8,
 }
 
 const BALANCE_CONFIG: { [key: string]: number } = {
@@ -342,11 +206,14 @@ const BALANCE_CONFIG: { [key: string]: number } = {
     HEAL_MAX: 20,
     XP_MIN: 10,
     XP_MAX: 30,
-    QUEST_BONUS: 2, //2x více XP z questů
+    QUEST_BONUS: 2, //2x více XP z quest fightů
     XP_LOSS_ON_DEATH: 0.8, //20% ztráta xp na smrti
     QUEST_MULTIPLY: 2,
     SECONDARY_XP_SHARE: 0.2,
     ENCOUNTER_CHECK_COOLDOWN: 300,
+    QUEST_ZUB_TARGET: 5,
+    NPC2_REQUIRED_MONSTER_INDEX: 1,
+    BOSS_GODZILLA_INDEX: 0,
 }
 
 const LOCATIONS = {
@@ -358,23 +225,23 @@ const LOCATIONS = {
     PLAYER_NEXT_TO_BED: [3, 1],
     PLAYER_LEAVE_HOSPITAL: [33, 7],
     HOSPITAL_DOOR_COL: 34,
-    HOSPITAL_DOOR_ROW: [6,8],
-    NPC2_LOCATION: [44,31],
+    HOSPITAL_DOOR_ROW: [6, 8],
+    NPC2_LOCATION: [44, 31],
 }
 
-let Battle: BattleState = {
+const Battle: BattleState = {
     activeChoice: FightMode.Fight,
     currentEnemy: null as EnemyMonster | null,
 }
 
-let MutableVars: Mutable = {
+const MutableVars: Mutable = {
     playerDirection: Direction.None,
     playerTurnStartTime: 0,
     lastEncounterCheck: 0,
     defeatedMonsters: [],
 }
 
-let GameState = {
+const GameState = {
     isBusy: false,
     speaking: false,
     gamePlay: false,
@@ -418,7 +285,7 @@ const GameLibrary = {
     //Základní monstra hráče
     baseMonsters:
         [
-            { name: 'Opice', level: 1, xp: 0, maxXp: 100, maxHealth: 80, health: 80, minDmg: 8, maxDmg: 14, icon: assets.image`forestMonkey`, gender: MonsterGender.F },
+            { name: 'Opice', level: 1, xp: 0, maxXp: 100, maxHealth: 800, health: 800, minDmg: 800, maxDmg: 1400, icon: assets.image`forestMonkey`, gender: MonsterGender.F },
             { name: 'Had', level: 1, xp: 0, maxXp: 100, maxHealth: 50, health: 50, minDmg: 15, maxDmg: 25, icon: assets.image`forestSnake`, gender: MonsterGender.M },
             { name: 'Krab', level: 1, xp: 0, maxXp: 100, maxHealth: 120, health: 120, minDmg: 4, maxDmg: 8, icon: assets.image`hermitCrab`, gender: MonsterGender.M },
         ],
@@ -435,22 +302,21 @@ const GameLibrary = {
     //Bossfighty
     bossfight:
         [
-            { name: "Godzilla", maxHealth: 500, health: 500, minDmg: 40, maxDmg: 80, icon: assets.image`godzilla`, gender: MonsterGender.F },
+            { name: "Godzilla", maxHealth: 500, health: 500, minDmg: 40, maxDmg: 80, icon: assets.image`miniGodzilla`, gender: MonsterGender.F },
             { name: "Houba", maxHealth: 250, health: 250, minDmg: 60, maxDmg: 90, icon: assets.image`mushroom`, gender: MonsterGender.F },
         ],
     //Background imgs
     background:
         [
             assets.image`cityscape`,
-            assets.image`ocean`,
         ],
     //Vytvoření inventory obrázku
     getInventoryBackground: function () {
         const width: number = UI_CONFIG.INVENTORY_WIDTH;
         const height: number = UI_CONFIG.INVENTORY_HEIGHT;
         const offset: number = UI_CONFIG.INVENTORY_PIXEL_OFFSET;
-        
-        let img = image.create(width, height);
+
+        const img = image.create(width, height);
         img.fillRect(0, 0, width, height, COLORS.BLACK);
         img.fillRect(offset / 2, offset / 2, width - offset, height - offset, COLORS.BROWN);
         img.fillRect(offset, offset, width - (2 * offset), height - (2 * offset), COLORS.BEIGE);
@@ -458,7 +324,7 @@ const GameLibrary = {
     },
 }
 
-let Quests: Quest[] = [
+const Quests: Quest[] = [
     { description: "Oziv padle zviratko", isDone: false, xpReward: 75 },
     { description: "Dosahni urovne 5", isDone: false, xpReward: 200 },
     { description: "Poraz prvni monstrum", isDone: false, xpReward: 50 },
@@ -466,7 +332,7 @@ let Quests: Quest[] = [
     { description: "Udelej prvni ukol", isDone: false, xpReward: 150 },
 ]
 
-let QuestHelpers = {
+const QuestHelpers = {
     firstRevive: false,
     level5: false,
     defeatedFirstMon: false,
@@ -474,7 +340,7 @@ let QuestHelpers = {
     firstQuest: false,
 }
 
-let PlayerState: { [key: string]: PlayerMonster[] } = {
+const PlayerState: { [key: string]: PlayerMonster[] } = {
     //Hráčovo příšery
     monsterArray: GameLibrary.baseMonsters.map(m => ({
         name: m.name,
@@ -490,7 +356,7 @@ let PlayerState: { [key: string]: PlayerMonster[] } = {
     })),
 
     //Mrtvé hráčovo Příšery
-    deadPlayerMonsters: 
+    deadPlayerMonsters:
         [
 
         ]
@@ -597,10 +463,10 @@ const crabAttack: Image[] = [
 ]
 
 const godzillaAttack: Image[] = [
-    assets.image`godzilla`,
-    godzilla1,
-    godzilla2,
-    assets.image`godzilla`,
+    assets.image`miniGodzilla`,
+    assets.image`kaijuMomAttack2`,
+    assets.image`kaijuMomAttack4`,
+    assets.image`miniGodzilla`,
 ]
 
 const attackAnims: { [key: string]: Image[] } = {
@@ -613,7 +479,7 @@ const attackAnims: { [key: string]: Image[] } = {
     "Zilka": miniGodzillaAttack,
     "Mlž": clamAttack,
     "Mag": magicFishAttack,
-    "Godzilla": godzillaAttack,    
+    "Godzilla": godzillaAttack,
 };
 
 function getAttackAnim(monster: MonsterBase): Image[] {
@@ -669,7 +535,7 @@ function openPanel(type: PanelType): void {
     controller.moveSprite(GameActors.player, 0, 0);
     GameActors.player.setFlag(SpriteFlag.Ghost, true);
 
-    let panel = sprites.create(GameLibrary.getInventoryBackground(), SpriteKind.UI);
+    const panel = sprites.create(GameLibrary.getInventoryBackground(), SpriteKind.UI);
     panel.setFlag(SpriteFlag.RelativeToCamera, true);
     panel.setPosition(UI_CONFIG.SCREEN_CENTER_X, UI_CONFIG.SCREEN_CENTER_Y);
     panel.z = UI_CONFIG.Z_PANEL;
@@ -712,6 +578,51 @@ function showIntro(): void {
     story.printCharacterText("Tvé dobrodružství začíná právě teď!");
 
     startGame();
+}
+
+function completeGame(): void {
+    for (let i = 0; i < 4; i++) {
+        scene.setBackgroundColor(COLORS.WHITE);
+        pause(UI_CONFIG.JITTER_PAUSE * 1.25);
+        scene.setBackgroundColor(COLORS.BLACK);
+        pause(UI_CONFIG.JITTER_PAUSE * 1.25);
+    }
+    if (UIComponents.enemyBattleSprite) {
+        for (let i = 0; i < 10; i++) {
+            UIComponents.enemyBattleSprite.y += 4;
+            UIComponents.enemyBattleSprite.setFlag(SpriteFlag.Invisible, true);
+            pause(UI_CONFIG.JITTER_PAUSE);
+            UIComponents.enemyBattleSprite.setFlag(SpriteFlag.Invisible, false);
+            pause(UI_CONFIG.JITTER_PAUSE);
+        }
+        UIComponents.enemyBattleSprite.destroy();
+    }
+
+    color.startFade(color.originalPalette, color.White, UI_CONFIG.ATTACK_PAUSE);
+    pause(UI_CONFIG.INTRO_PAUSE);
+    color.startFade(color.White, color.originalPalette, UI_CONFIG.BASIC_PAUSE * 2);
+    if (UIComponents.enemyHPBar) UIComponents.enemyHPBar.destroy();
+    if (UIComponents.enemyNameSprite) UIComponents.enemyNameSprite.destroy();
+    if (UIComponents.enemyStatusBox) UIComponents.enemyStatusBox.destroy();
+
+    if (UIComponents.playerHPBar) UIComponents.playerHPBar.destroy();
+    if (UIComponents.playerNameSprite) UIComponents.playerNameSprite.destroy();
+    if (UIComponents.playerStatusBox) UIComponents.playerStatusBox.destroy();
+    if (UIComponents.playerBattleSprite) UIComponents.playerBattleSprite.destroy();
+    if (UIComponents.fightMenuBox) UIComponents.fightMenuBox.destroy();
+    if (UIComponents.battleCursor) UIComponents.battleCursor.destroy();
+
+    scene.setBackgroundImage(null);
+    scene.setBackgroundColor(COLORS.BLACK);
+    pause(UI_CONFIG.BASIC_PAUSE * 2);
+
+    story.printCharacterText("Godzilla padá k zemi a země se naposledy otřásá...");
+    story.printCharacterText("Houba i Godzilla jsou poraženi. Svět je konečně v bezpečí!");
+
+    showBattleBanner("VÍTĚZSTVÍ!", UI_CONFIG.BASIC_PAUSE * 3);
+
+    saveGame();
+    game.gameOver(true);
 }
 
 function createTextSprite(text: string, width: number, height: number, x: number, y: number, kind: number, z: number): Sprite {
@@ -844,28 +755,28 @@ function drawBestiaryContent(): void {
 }
 
 function drawQuestsContent(): void {
-    const startY = 20;
-    const spacing = 18;
+    const startY = UI_CONFIG.QUESTS_START_Y;
+    const spacing = UI_CONFIG.QUESTS_SPACING;
 
     for (let i: number = 0; i < Quests.length; i++) {
-        let y: number = startY + (i * spacing);
-        let currentQuest = Quests[i];
+        const y: number = startY + (i * spacing);
+        const currentQuest = Quests[i];
 
-        let descColor = currentQuest.isDone ? COLORS.GREEN : COLORS.BLACK;
-        writeSmallFont(currentQuest.description, 80, y, UI_CONFIG.Z_BANNER, SpriteKind.UIText);
+        const descColor = currentQuest.isDone ? COLORS.GREEN : COLORS.BLACK;
+        writeSmallFont(currentQuest.description, UI_CONFIG.QUESTS_TEXT_X, y, UI_CONFIG.Z_BANNER, SpriteKind.UIText);
 
         let progressWidth = 0;
         let progressText = "";
 
         if (i === 3) {
-            progressWidth = (QuestHelpers.zubCounter / 5) * 60;
-            progressText = `${QuestHelpers.zubCounter}/5`;
+            progressWidth = (QuestHelpers.zubCounter / BALANCE_CONFIG.QUEST_ZUB_TARGET) * UI_CONFIG.QUESTS_BAR_WIDTH;
+            progressText = `${QuestHelpers.zubCounter}/${BALANCE_CONFIG.QUEST_ZUB_TARGET}`;
         } else {
-            progressWidth = currentQuest.isDone ? 60 : 0;
+            progressWidth = currentQuest.isDone ? UI_CONFIG.QUESTS_BAR_WIDTH : 0;
             progressText = currentQuest.isDone ? "[X]" : "0/1";
         }
 
-        let qProgress = image.create(60, 3);
+        const qProgress = image.create(UI_CONFIG.QUESTS_BAR_WIDTH, UI_CONFIG.QUESTS_BAR_HEIGHT);
         qProgress.fill(COLORS.BLACK);
 
         if (progressWidth > 0) {
@@ -874,7 +785,7 @@ function drawQuestsContent(): void {
         }
 
         let xpBar = sprites.create(qProgress, SpriteKind.UIBar);
-        xpBar.setPosition(80, y + 10);
+        xpBar.setPosition(UI_CONFIG.SCREEN_CENTER_X, y + 10);
         xpBar.setFlag(SpriteFlag.RelativeToCamera, true);
         xpBar.z = UI_CONFIG.Z_PANEL_TEXT;
 
@@ -893,7 +804,7 @@ function loadGame(): void {
     let savedGraveyard: any[] = saveObject.graveyard || [];
     let savedQuestProgress: boolean[] = saveObject.questProgress || [];
 
-    PlayerState.monsterArray = [];  
+    PlayerState.monsterArray = [];
     for (let savedMonster of savedParty) {
         let base = GameLibrary.baseMonsters.find(monster => monster.name === savedMonster.name);
         if (base) {
@@ -931,7 +842,7 @@ function loadGame(): void {
         }
     }
 
-    
+
     for (let i = 0; i < Quests.length; i++) {
         if (savedQuestProgress[i] !== undefined) {
             Quests[i].isDone = savedQuestProgress[i];
@@ -956,18 +867,18 @@ function loadGame(): void {
 }
 
 function createHealthBarSprite(current: number, max: number, width: number, height: number, x: number, y: number, kind: number, z: number): Sprite {
-    let bar = image.create(width, height);
+    const bar = image.create(width, height);
     bar.fill(COLORS.BLACK);
 
-    let currentWidth = Math.constrain((current / max) * (width - 2), 0, width - 2);
+    const currentWidth = Math.constrain((current / max) * (width - UI_CONFIG.HEALTH_BAR_BORDER_REDUCTION), 0, width - UI_CONFIG.HEALTH_BAR_BORDER_REDUCTION);
 
     let color = COLORS.GREEN;
     if (current < max * BALANCE_CONFIG.LOW_HEALTH_THRESHOLD) color = COLORS.RED;
     else if (current < max * BALANCE_CONFIG.MID_HEALTH_THRESHOLD) color = COLORS.YELLOW;
 
-    if (currentWidth > 0) bar.fillRect(1, 1, currentWidth, height - 2, color);
+    if (currentWidth > 0) bar.fillRect(UI_CONFIG.HEALTH_BAR_PADDING, UI_CONFIG.HEALTH_BAR_PADDING, currentWidth, height - UI_CONFIG.HEALTH_BAR_BORDER_REDUCTION, color);
 
-    let barSprite = sprites.create(bar, kind);
+    const barSprite = sprites.create(bar, kind);
     barSprite.setPosition(x, y);
     barSprite.setFlag(SpriteFlag.RelativeToCamera, true);
     barSprite.z = z;
@@ -984,8 +895,8 @@ function getAdjective(gender: MonsterGender): string {
 
 function placePlayerAfterFight(npc: Sprite): void {
     if (!hasPlayer() || !npc) return;
-    let diffX = GameActors.player.x - npc.x;
-    let diffY = GameActors.player.y - npc.y;
+    const diffX = GameActors.player.x - npc.x;
+    const diffY = GameActors.player.y - npc.y;
 
     if (Math.abs(diffX) > Math.abs(diffY)) {
         GameActors.player.x += (diffX > 0) ? UI_CONFIG.TILE_SIZE : -UI_CONFIG.TILE_SIZE;
@@ -996,7 +907,7 @@ function placePlayerAfterFight(npc: Sprite): void {
 
 function updateCursorDisplay(): void {
     if (!UIComponents.battleCursor) return;
-    
+
     let boxLeft = UI_CONFIG.CURSOR_POS_X;
     let boxTop = UI_CONFIG.CURSOR_POS_Y;
 
@@ -1018,7 +929,7 @@ function updateCursorDisplay(): void {
     }
 
     UIComponents.battleCursor.setPosition(x, y);
-    UIComponents.battleCursor.z = UI_CONFIG.Z_CURSOR_SPRITE;
+    UIComponents.battleCursor.z = UI_CONFIG.Z_CURSOR;
 }
 
 function showBattleBanner(text: string, duration: number): void {
@@ -1046,7 +957,7 @@ function showBattleBanner(text: string, duration: number): void {
 function completeQuest(q: Quest) {
     if (q.isDone || GameState.isProcessingQuest) return;
     q.isDone = true;
-    
+
     showBattleBanner("Úkol splněn", UI_CONFIG.BASIC_PAUSE);
     showBattleBanner(`+${q.xpReward} XP`, UI_CONFIG.BASIC_PAUSE);
 
@@ -1058,7 +969,7 @@ function completeQuest(q: Quest) {
     if (Quests[4] && !Quests[4].isDone && q !== Quests[4]) {
         completeQuest(Quests[4]);
     }
-    
+
     GameState.isProcessingQuest = false;
 }
 
@@ -1081,7 +992,7 @@ function startGame(): void {
 
         GameActors.npc2 = sprites.create(assets.image`npc3`, SpriteKind.Enemy);
         placeAt(GameActors.npc2, LOCATIONS.NPC2_LOCATION);
-        
+
         GameActors.bossfight = sprites.create(assets.image`npc2`, SpriteKind.Enemy);
         placeAt(GameActors.bossfight, LOCATIONS.BOSSFIGHT_LOCATION);
 
@@ -1099,14 +1010,14 @@ function checkLevelUp(monster: PlayerMonster): void {
         monster.level += 1;
         monster.xp -= monster.maxXp;
         monster.health = monster.maxHealth;
-       
+
         monster.maxXp = Math.floor(monster.maxXp * BALANCE_CONFIG.XP_SCALE);
         monster.maxHealth = Math.floor(monster.maxHealth * BALANCE_CONFIG.HP_DMG_SCALE);
         monster.minDmg = Math.floor(monster.minDmg * BALANCE_CONFIG.HP_DMG_SCALE);
         monster.maxDmg = Math.floor(monster.maxDmg * BALANCE_CONFIG.HP_DMG_SCALE);
 
         showBattleBanner(monster.name + " postoupil na lvl " + monster.level + "!", UI_CONFIG.BANNER_PAUSE_LONG);
-        
+
         if (monster.level >= 5 && !Quests[1].isDone) {
             completeQuest(Quests[1]);
         }
@@ -1196,12 +1107,12 @@ function updateStatus(isPlayer: boolean): void {
     if (isPlayer && UIComponents.playerHPBar) UIComponents.playerHPBar.destroy();
     else if (!isPlayer && UIComponents.enemyHPBar) UIComponents.enemyHPBar.destroy();
 
-    let newName = createTextSprite(
-        monster.name, 50, 8, barX + (isPlayer ? 1 : 3), barY - 8, SpriteKind.UIText, 25
+    const newName = createTextSprite(
+        monster.name, UI_CONFIG.BATTLE_NAME_WIDTH, UI_CONFIG.BATTLE_NAME_HEIGHT, barX + (isPlayer ? 1 : 3), barY - UI_CONFIG.BATTLE_NAME_HEIGHT, SpriteKind.UIText, UI_CONFIG.Z_BATTLE_TEXT_BAR
     );
 
-    let newBar = createHealthBarSprite(
-        monster.health, monster.maxHealth, 35, 5, barX, barY, SpriteKind.UIBar, 25
+    const newBar = createHealthBarSprite(
+        monster.health, monster.maxHealth, UI_CONFIG.BATTLE_BAR_WIDTH, UI_CONFIG.BATTLE_BAR_HEIGHT, barX, barY, SpriteKind.UIBar, UI_CONFIG.Z_BATTLE_TEXT_BAR
     );
 
     if (isPlayer) {
@@ -1227,16 +1138,15 @@ function startFight(): void {
     scene.cameraFollowSprite(null);
     scene.centerCameraAt(UI_CONFIG.SCREEN_CENTER_X, UI_CONFIG.SCREEN_CENTER_Y);
 
-    
+
     let randomMonsterNumber = randint(0, GameLibrary.wildPool.length - 1);
-    let randomBackgroundNumber = randint(0, GameLibrary.background.length - 1);
 
     if (GameActors.lastNpcEncountered === GameActors.npc2) {
-        randomMonsterNumber = 1;
-    }  
+        randomMonsterNumber = BALANCE_CONFIG.NPC2_MONSTER_INDEX;
+    }
     GameActors.player.setFlag(SpriteFlag.Invisible, true);
     tiles.setCurrentTilemap(null);
-    scene.setBackgroundImage(GameLibrary.background[randomBackgroundNumber]);
+    scene.setBackgroundImage(GameLibrary.background[0]);
     Battle.currentEnemy = cloneEnemy(GameLibrary.wildPool[randomMonsterNumber]);
 
     if (GameActors.lastNpcEncountered === GameActors.npc2) {
@@ -1246,9 +1156,9 @@ function startFight(): void {
     }
 
     if (GameActors.lastNpcEncountered === GameActors.bossfight) {
-        Battle.currentEnemy = cloneEnemy(GameLibrary.bossfight[0]);
+        Battle.currentEnemy = cloneEnemy(GameLibrary.bossfight[1]);
     }
-    
+
     Battle.currentEnemy.health = Battle.currentEnemy.maxHealth;
 
     UIComponents.fightMenuBox = createUISprite(assets.image`fightMenu`, UI_CONFIG.FIGHT_MENU_POS_X, UI_CONFIG.FIGHT_MENU_POS_Y);
@@ -1259,9 +1169,8 @@ function startFight(): void {
     UIComponents.enemyBattleSprite = sprites.create(Battle.currentEnemy.icon, SpriteKind.BattleSprite);
 
     UIComponents.playerBattleSprite.setScale(UI_CONFIG.BATTLE_SPRITE_SCALE);
-    if (Battle.currentEnemy.name === "Godzilla") UIComponents.enemyBattleSprite.setScale(UI_CONFIG.GODZILLA_SCALE);
-    else UIComponents.enemyBattleSprite.setScale(2);
-    
+    UIComponents.enemyBattleSprite.setScale(2);
+
     UIComponents.playerBattleSprite.setPosition(UI_CONFIG.PLAYER_POS_X, UI_CONFIG.PLAYER_POS_Y);
     UIComponents.enemyBattleSprite.setPosition(UI_CONFIG.ENEMY_POS_X, UI_CONFIG.ENEMY_POS_Y);
 
@@ -1274,15 +1183,15 @@ function startFight(): void {
     updateStatus(true);  // Aktualizuje hráče
     updateStatus(false); // Aktualizuje nepřítele
 
-    UIComponents.battleCursor = sprites.create(assets.image`battleCursor`, SpriteKind.UI);
-    UIComponents.battleCursor.z = UI_CONFIG.Z_PANEL;
-    UIComponents.battleCursor.setFlag(SpriteFlag.RelativeToCamera, true);
-    updateCursorDisplay();
-
     let adjective = getAdjective(Battle.currentEnemy.gender);
     color.startFade(color.Black, color.originalPalette, UI_CONFIG.ATTACK_PAUSE);
     story.printCharacterText(`${adjective} ${Battle.currentEnemy.name} útočí!`);
     pause(UI_CONFIG.BASIC_PAUSE);
+
+    UIComponents.battleCursor = sprites.create(assets.image`battleCursor`, SpriteKind.UI);
+    UIComponents.battleCursor.z = UI_CONFIG.Z_CURSOR;
+    UIComponents.battleCursor.setFlag(SpriteFlag.RelativeToCamera, true);
+    updateCursorDisplay();
 
     let coinflip = randint(1, 2);
 
@@ -1355,15 +1264,15 @@ function executeAttack(attackerName: string, target: MonsterBase, isPlayerAttack
 
     showBattleBanner(attackerName + " útočí!", UI_CONFIG.BANNER_PAUSE);
 
-    let attacker: MonsterBase = isPlayerAttacking ? PlayerState.monsterArray[0] : Battle.currentEnemy;
+    const attacker: MonsterBase = isPlayerAttacking ? PlayerState.monsterArray[0] : Battle.currentEnemy;
 
     let damage = randint(attacker.minDmg, attacker.maxDmg);
-    let criticalDmg = randint(1, BALANCE_CONFIG.CRIT_CHANCE);
+    const criticalDmg = randint(1, BALANCE_CONFIG.CRIT_CHANCE);
     let criticalStrike: boolean = false;
 
-    let attackAnim = getAttackAnim(attacker);
-    let attackerSprite = isPlayerAttacking ? UIComponents.playerBattleSprite : UIComponents.enemyBattleSprite;
-    let moveOffset = isPlayerAttacking ? UI_CONFIG.ATTACK_MOVE_OFFSET : -UI_CONFIG.ATTACK_MOVE_OFFSET;
+    const attackAnim = getAttackAnim(attacker);
+    const attackerSprite = isPlayerAttacking ? UIComponents.playerBattleSprite : UIComponents.enemyBattleSprite;
+    const moveOffset = isPlayerAttacking ? UI_CONFIG.ATTACK_MOVE_OFFSET : -UI_CONFIG.ATTACK_MOVE_OFFSET;
 
     animation.runImageAnimation(attackerSprite, attackAnim, UI_CONFIG.ANIMATION_SPEED, false);
     attackerSprite.x += moveOffset;
@@ -1372,7 +1281,7 @@ function executeAttack(attackerName: string, target: MonsterBase, isPlayerAttack
 
     if (criticalDmg === 1) {
         criticalStrike = true;
-        let critSprite = isPlayerAttacking
+        const critSprite = isPlayerAttacking
             ? UIComponents.enemyBattleSprite
             : UIComponents.playerBattleSprite;
         critSprite.setFlag(SpriteFlag.RelativeToCamera, false);
@@ -1383,7 +1292,7 @@ function executeAttack(attackerName: string, target: MonsterBase, isPlayerAttack
     }
 
     target.health -= damage;
-    if (target.health < target.maxHealth * UI_CONFIG.LOW_HP_CAMERA_THRESHOLD) {
+    if (target.health < (target.maxHealth * UI_CONFIG.LOW_HP_CAMERA_THRESHOLD_PERCENT) / 100) {
         scene.cameraShake(UI_CONFIG.LOW_HP_SHAKE_INTENSITY, UI_CONFIG.BASIC_PAUSE);
     }
 
@@ -1411,7 +1320,10 @@ function executeAttack(attackerName: string, target: MonsterBase, isPlayerAttack
 function executeHeal(targetName: string, target: MonsterBase): void {
     if (!target) return;
 
-    let heal = randint(BALANCE_CONFIG.HEAL_MIN, BALANCE_CONFIG.HEAL_MAX);
+    let baseHeal = randint(BALANCE_CONFIG.HEAL_MIN, BALANCE_CONFIG.HEAL_MAX);
+    let percentageHeal = Math.floor(target.maxHealth * 0.10);
+    let heal = baseHeal + percentageHeal;
+
     let oldHealth = target.health;
     target.health += heal;
 
@@ -1461,6 +1373,48 @@ function handlePlayerAttack(): void {
             ? showBattleBanner(Battle.currentEnemy.name + " poražen!", UI_CONFIG.BANNER_PAUSE)
             : showBattleBanner(Battle.currentEnemy.name + " poražena!", UI_CONFIG.BANNER_PAUSE);
 
+        if (GameActors.lastNpcEncountered === GameActors.bossfight && Battle.currentEnemy.name === "Houba") {
+            showBattleBanner("Nastupuje Godzilla!", UI_CONFIG.BANNER_PAUSE_LONG);
+
+            Battle.currentEnemy = cloneEnemy(GameLibrary.bossfight[BALANCE_CONFIG.BOSS_GODZILLA_INDEX]);
+            Battle.currentEnemy.health = Battle.currentEnemy.maxHealth;
+
+            if (UIComponents.enemyBattleSprite) {
+                UIComponents.enemyBattleSprite.setImage(Battle.currentEnemy.icon);
+            }
+            updateStatus(false);
+
+
+            startBattleTurn(Turn.Player);
+            return;
+        }
+
+        if (Battle.currentEnemy.name === "Godzilla") {
+            if (UIComponents.enemyBattleSprite) UIComponents.enemyBattleSprite.setFlag(SpriteFlag.RelativeToCamera, false);
+            if (UIComponents.playerBattleSprite) UIComponents.playerBattleSprite.setFlag(SpriteFlag.RelativeToCamera, false);
+            if (UIComponents.battleCursor) UIComponents.battleCursor.setFlag(SpriteFlag.RelativeToCamera, false);
+            if (UIComponents.fightMenuBox) UIComponents.fightMenuBox.setFlag(SpriteFlag.RelativeToCamera, false);
+            if (UIComponents.enemyStatusBox) UIComponents.enemyStatusBox.setFlag(SpriteFlag.RelativeToCamera, false);
+            if (UIComponents.playerStatusBox) UIComponents.playerStatusBox.setFlag(SpriteFlag.RelativeToCamera, false);
+            if (UIComponents.enemyHPBar) UIComponents.enemyHPBar.setFlag(SpriteFlag.RelativeToCamera, false);
+            if (UIComponents.playerHPBar) UIComponents.playerHPBar.setFlag(SpriteFlag.RelativeToCamera, false);
+            if (UIComponents.enemyNameSprite) UIComponents.enemyNameSprite.setFlag(SpriteFlag.RelativeToCamera, false);
+            if (UIComponents.playerNameSprite) UIComponents.playerNameSprite.setFlag(SpriteFlag.RelativeToCamera, false);
+
+            for (let i = 0; i < UI_CONFIG.GODZILLA_DEATH_SHAKE_LOOPS; i++) {
+                const offsetX = randint(-UI_CONFIG.GODZILLA_DEATH_SHAKE_MAX_OFFSET, UI_CONFIG.GODZILLA_DEATH_SHAKE_MAX_OFFSET);
+                const offsetY = randint(-UI_CONFIG.GODZILLA_DEATH_SHAKE_MAX_OFFSET, UI_CONFIG.GODZILLA_DEATH_SHAKE_MAX_OFFSET);
+
+                scene.centerCameraAt(UI_CONFIG.SCREEN_CENTER_X + offsetX, UI_CONFIG.SCREEN_CENTER_Y + offsetY);
+
+                pause(UI_CONFIG.JITTER_PAUSE * 1.5);
+            }
+
+            scene.centerCameraAt(UI_CONFIG.SCREEN_CENTER_X, UI_CONFIG.SCREEN_CENTER_Y);
+            completeGame();
+            return;
+        }
+
         let isQuest: boolean = false;
         if (GameActors.lastNpcEncountered === GameActors.npc1 || GameActors.lastNpcEncountered === GameActors.npc2) {
             isQuest = true;
@@ -1474,7 +1428,7 @@ function handlePlayerAttack(): void {
         let xpGain = randint(BALANCE_CONFIG.XP_MIN, BALANCE_CONFIG.XP_MAX);
         if (isQuest) xpGain *= BALANCE_CONFIG.QUEST_BONUS;
         let secondaryXp = Math.floor(xpGain * BALANCE_CONFIG.SECONDARY_XP_SHARE);
-        
+
         if (PlayerState.monsterArray.length > 0) {
             for (let monster of PlayerState.monsterArray) {
                 if (monster === PlayerState.monsterArray[0]) {
@@ -1495,7 +1449,7 @@ function handlePlayerAttack(): void {
         }
 
         if (Battle.currentEnemy.name === "Zub") QuestHelpers.zubCounter++;
-        
+
         endBattle();
 
         if (!Quests[2].isDone) {
@@ -1505,7 +1459,7 @@ function handlePlayerAttack(): void {
 
         if (QuestHelpers.zubCounter >= 5 && !Quests[3].isDone) {
             completeQuest(Quests[3]);
-        } 
+        }
 
         for (let monster of PlayerState.monsterArray) {
             checkLevelUp(monster);
@@ -1593,8 +1547,8 @@ function handleEnemyAI(): void {
 function finishTalking() {
     if (!hasPlayer()) return;
     if (GameActors.lastNpcEncountered) {
-        let diffX = GameActors.player.x - GameActors.lastNpcEncountered.x;
-        let diffY = GameActors.player.y - GameActors.lastNpcEncountered.y;
+        const diffX = GameActors.player.x - GameActors.lastNpcEncountered.x;
+        const diffY = GameActors.player.y - GameActors.lastNpcEncountered.y;
 
         if (Math.abs(diffX) > Math.abs(diffY)) {
             GameActors.player.x += (diffX > 0) ? UI_CONFIG.NPC_SEPARATION_OFFSET : -UI_CONFIG.NPC_SEPARATION_OFFSET;
@@ -1618,7 +1572,7 @@ function handleGenericNPC(npc: Sprite): void {
             story.printCharacterText("Tak se měj!", "Simona");
         }
     }
-    
+
     if (npc === GameActors.npc2) {
         story.printCharacterText("Jsem král mořských hlubin", "Arnold");
         story.printCharacterText("Troufáš si na moje zvíře?", "Arnold");
@@ -1648,7 +1602,7 @@ function handleHealer(): void {
     if (story.checkLastAnswer("Oživit")) {
         if (PlayerState.deadPlayerMonsters.length === 0) {
             story.printCharacterText("Nikdo není mrtvý!", "Léčitel");
-        } else {                                          
+        } else {
             for (let monster of PlayerState.deadPlayerMonsters) {
                 if (isNaN(monster.xp) || monster.xp < 0) {
                     monster.xp = 0;
@@ -1671,7 +1625,7 @@ function handleHealer(): void {
 function handleBestiary(): void {
     story.printCharacterText("Copak si přeješ?", "Správce");
     story.showPlayerChoices("Bestiář", "Úkol");
-    
+
     if (story.checkLastAnswer("Bestiář")) {
         toggleBestiary();
     } else {
@@ -1680,10 +1634,10 @@ function handleBestiary(): void {
 }
 
 function handleBossfight(): void {
-    story.printCharacterText("Aby si dohrál hru, musíš porazit moje příšery", "???");
-    story.showPlayerChoices("Jdu do toho!", "Přijdu později");
+    story.printCharacterText("Chceš vyzvat moje příšery?", "???");
+    story.showPlayerChoices("Ano", "Ne");
 
-    if (story.checkLastAnswer("Jdu do toho!")) startFight();
+    if (story.checkLastAnswer("Ano")) startFight();
 
     finishTalking();
 }
@@ -1727,7 +1681,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleInsignia, func
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.tileGrass3, function (sprite, location) {
     if (GameState.activeBattle || !GameState.gamePlay || GameState.speaking || !hasPlayer() || game.runtime() < MutableVars.lastEncounterCheck) return;
     if (GameState.activeBattle && game.runtime() > MutableVars.lastEncounterCheck + (UI_CONFIG.BASIC_PAUSE * 2)) return
-    
+
     MutableVars.lastEncounterCheck = game.runtime() + BALANCE_CONFIG.ENCOUNTER_CHECK_COOLDOWN;
 
     if (randint(1, BALANCE_CONFIG.ENCOUNTER_CHANCE) === 1) {
@@ -1745,7 +1699,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.castle.tileGrass3, function (spri
 });
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`sign`, function (player, location) {
-    if (GameState.speaking || GameState.activeBattle ||!hasPlayer()) return;
+    if (GameState.speaking || GameState.activeBattle || !hasPlayer()) return;
 
     GameState.speaking = true;
     player.setVelocity(0, 0);
@@ -1773,8 +1727,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`sign`, function (player, loca
 if (bigButton) {
     story.setSoundEnabled(false);
     scene.setBackgroundImage(assets.image`intro`);
-    bigButton.sx = UI_CONFIG.BIG_BUTTON_SCALE;
-    bigButton.sy = UI_CONFIG.BIG_BUTTON_SCALE;
+    bigButton.sx = UI_CONFIG.BIG_BUTTON_SCALE_PERCENT / 100;
+    bigButton.sy = UI_CONFIG.BIG_BUTTON_SCALE_PERCENT / 100;
     bigButton.setPosition(UI_CONFIG.SCREEN_CENTER_X, UI_CONFIG.SCREEN_CENTER_Y);
     animation.runImageAnimation(bigButton, bigButtonAnimation, UI_CONFIG.BASIC_PAUSE, true);
 }
@@ -1810,7 +1764,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
     if (!GameState.gamePlay) {
         if (GameState.inventoryOpen || GameState.bestiaryOpen || GameState.questsOpen) return;
-        
+
         if (bigButton) {
             animation.stopAnimation(animation.AnimationTypes.All, bigButton);
             bigButton.setImage(assets.image`bigButtonPress1`);
