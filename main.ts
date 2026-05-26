@@ -289,7 +289,7 @@ function loadGame(): void {
         QuestHelpers.zubCounter = saveObject.helpers.zubCounter || 0;
         QuestHelpers.level5 = saveObject.helpers.level5 || false;
         QuestHelpers.firstRevive = saveObject.helpers.firstRevive || false;
-        QuestHelpers.defeatedFirstMon = saveObject.helpers.defeadFirstMon || false;
+        QuestHelpers.defeatedFirstMon = saveObject.helpers.defeatedFirstMon || false;
         QuestHelpers.firstQuest = saveObject.helpers.firstQuest || false;
     }
 
@@ -392,6 +392,7 @@ function showBattleBanner(text: string, duration: number): void {
 
 function completeQuest(q: Quest) {
     if (q.isDone || GameState.isProcessingQuest) return;
+    GameState.isProcessingQuest = true;
     q.isDone = true;
     
     showBattleBanner("Úkol splněn", UI_CONFIG.BASIC_PAUSE);

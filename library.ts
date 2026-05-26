@@ -70,7 +70,6 @@ const GameLibrary = {
         const width: number = UI_CONFIG.INVENTORY_WIDTH;
         const height: number = UI_CONFIG.INVENTORY_HEIGHT;
         const offset: number = UI_CONFIG.INVENTORY_PIXEL_OFFSET;
-
         const img = image.create(width, height);
         img.fillRect(0, 0, width, height, COLORS.BLACK);
         img.fillRect(offset / 2, offset / 2, width - offset, height - offset, COLORS.BROWN);

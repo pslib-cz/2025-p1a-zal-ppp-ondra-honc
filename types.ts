@@ -57,7 +57,6 @@ type MonsterBase = {
     gender: MonsterGender,
 }
 
-
 type PlayerMonster = MonsterBase & {
     level: number,
     xp: number,

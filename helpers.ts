@@ -81,6 +81,8 @@ function closePanel(type: PanelType): void {
 function getPlayerPowerMultiplier(): number {
     let maxPlayerLevel = 1;
     for (let monster of PlayerState.monsterArray) {
+        if (!monster) continue;
+        
         if (monster.level > maxPlayerLevel) {
             maxPlayerLevel = monster.level;
         }
