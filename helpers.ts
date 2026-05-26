@@ -89,3 +89,43 @@ function getPlayerPowerMultiplier(): number {
     }
     return 1 + (maxPlayerLevel - 1) * 0.15;
 }
+
+function serializeMonster(m: PlayerMonster): SavedMonster {
+    return {
+        name: m.name,
+        health: m.health,
+        maxHealth: m.maxHealth,
+        xp: m.xp,
+        maxXp: m.maxXp,
+        level: m.level,
+        minDmg: m.minDmg,
+        maxDmg: m.maxDmg,
+    }
+}
+
+function hydrateMonster(saved: SavedMonster): PlayerMonster | null {
+    const base = GameLibrary.baseMonsters.find(monster => monster.name === saved.name);
+    if (!base) return null;
+
+    return {
+        name: saved.name,
+        health: saved.health,
+        maxHealth: saved.maxHealth,
+        xp: saved.xp,
+        maxXp: saved.maxXp,
+        level: saved.level,
+        minDmg: saved.minDmg,
+        maxDmg: saved.maxDmg,
+        icon: base.icon,
+        gender: base.gender,
+    }
+}
+
+function loadMonsterList(list: SavedMonster[]): PlayerMonster[] {
+    const out: PlayerMonster[] = [];
+    for (const sm of list) {
+        const hydrated = hydrateMonster(sm)
+        if (hydrated) out.push(hydrated);
+    }
+    return out;
+}

@@ -79,6 +79,27 @@ type Quest = {
     xpReward: number,
 }
 
+type SavedMonster = {
+    name: string
+    health: number
+    maxHealth: number
+    xp: number
+    maxXp: number
+    level: number
+    minDmg: number
+    maxDmg: number
+}
+
+type SaveFile = {
+    party: SavedMonster[]
+    graveyard: SavedMonster[]
+    questProgress: boolean[]
+    helpers: typeof QuestHelpers
+    defeated: string[]
+    playerX: number
+    playerY: number
+}
+
 const enum COLORS {
     BLACK = 15,
     GREEN = 7,
