@@ -26,7 +26,7 @@ function loadGame(): void {
         if (progress[i] !== undefined) Quests[i].isDone = progress[i];
     }
 
-    const helpers = saveObject.helpers
+    const helpers = saveObject.helpers;
     if (helpers) {
         QuestHelpers.zubCounter = helpers.zubCounter || 0;
         QuestHelpers.level5 = helpers.level5 || false;
@@ -35,7 +35,7 @@ function loadGame(): void {
         QuestHelpers.firstQuest = helpers.firstQuest || false;
     }
 
-    MutableVars.defeatedMonsters = saveObject.defeated || []
+    MutableVars.defeatedMonsters = saveObject.defeated || [];
 
     if (hasPlayer() && saveObject.playerX !== undefined && saveObject.playerY !== undefined) {
         GameActors.player.setPosition(saveObject.playerX, saveObject.playerY);
