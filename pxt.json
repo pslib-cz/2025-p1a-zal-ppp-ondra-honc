@@ -10,6 +10,8 @@
     },
     "files": [
         "types.ts",
+        "images.g.ts",
+        "tilemap.g.ts",
         "library.ts",
         "state.ts",
         "helpers.ts",
@@ -17,9 +19,7 @@
         "README.md",
         "assets.json",
         "images.g.jres",
-        "images.g.ts",
-        "tilemap.g.jres",
-        "tilemap.g.ts"
+        "tilemap.g.jres"
     ],
     "testFiles": [
         "test.ts"
