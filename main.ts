@@ -71,7 +71,6 @@ type Quest = {
     isDone: boolean,
     xpReward: number,
 }
-
 const enum COLORS {
     BLACK = 15,
     GREEN = 7,
