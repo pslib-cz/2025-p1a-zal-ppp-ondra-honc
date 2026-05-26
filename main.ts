@@ -302,8 +302,8 @@ const GameLibrary = {
     //Bossfighty
     bossfight:
         [
-            { name: "Godzilla", maxHealth: 350, health: 350, minDmg: 40, maxDmg: 60, icon: assets.image`miniGodzilla`, gender: MonsterGender.F },
-            { name: "Houba", maxHealth: 200, health: 200, minDmg: 50, maxDmg: 70, icon: assets.image`mushroom`, gender: MonsterGender.F },
+            { name: "Godzilla", maxHealth: 200, health: 200, minDmg: 15, maxDmg: 30, icon: assets.image`miniGodzilla`, gender: MonsterGender.F },
+            { name: "Houba", maxHealth: 150, health: 150, minDmg: 20, maxDmg: 35, icon: assets.image`mushroom`, gender: MonsterGender.F },
         ],
     //Background imgs
     background:
@@ -489,7 +489,7 @@ function getAttackAnim(monster: MonsterBase): Image[] {
 
     return [monster.icon];
 }
-//Helper functions
+//Helper funkce
 function hasPlayer(): boolean {
     return GameActors.player !== null;
 }
@@ -502,13 +502,13 @@ function safeDestroy(s: Sprite | null): void {
     if (s) s.destroy();
 }
 
-function cloneEnemy(m: EnemyMonster): EnemyMonster {
+function cloneEnemy(m: EnemyMonster, multiplier: number): EnemyMonster {
     return {
         name: m.name,
-        maxHealth: m.maxHealth,
-        health: m.health,
-        minDmg: m.minDmg,
-        maxDmg: m.maxDmg,
+        maxHealth: Math.floor(m.maxHealth * multiplier),
+        health: Math.floor(m.health * multiplier),
+        minDmg: Math.floor(m.minDmg * multiplier),
+        maxDmg: Math.floor(m.maxDmg * multiplier),
         icon: m.icon,
         gender: m.gender
     };
@@ -560,7 +560,17 @@ function closePanel(type: PanelType): void {
     controller.moveSprite(GameActors.player, UI_CONFIG.PLAYER_MOVE_SPEED, UI_CONFIG.PLAYER_MOVE_SPEED);
     GameActors.player.setFlag(SpriteFlag.Ghost, false);
 }
-//End of helper functions
+
+function getPlayerPowerMultiplier(): number {
+    let maxPlayerLevel = 1;
+    for (let monster of PlayerState.monsterArray) {
+        if (monster.level > maxPlayerLevel) {
+            maxPlayerLevel = monster.level;
+        }
+    }
+    return 1 + (maxPlayerLevel - 1) * 0.15;
+}
+//Konec helper funkcí
 
 function showIntro(): void {
     GameState.gamePlay = false;
@@ -1006,7 +1016,7 @@ function startGame(): void {
 
 function checkLevelUp(monster: PlayerMonster): void {
     if (!monster) return;
-    if (monster.xp >= monster.maxXp) {
+    while (monster.xp >= monster.maxXp) {
         monster.level += 1;
         monster.xp -= monster.maxXp;
         monster.health = monster.maxHealth;
@@ -1147,7 +1157,7 @@ function startFight(): void {
     GameActors.player.setFlag(SpriteFlag.Invisible, true);
     tiles.setCurrentTilemap(null);
     scene.setBackgroundImage(GameLibrary.background[0]);
-    Battle.currentEnemy = cloneEnemy(GameLibrary.wildPool[randomMonsterNumber]);
+    Battle.currentEnemy = cloneEnemy(GameLibrary.wildPool[randomMonsterNumber], getPlayerPowerMultiplier());
 
     if (GameActors.lastNpcEncountered === GameActors.npc2) {
         Battle.currentEnemy.maxHealth *= BALANCE_CONFIG.QUEST_MULTIPLY;
@@ -1156,7 +1166,7 @@ function startFight(): void {
     }
 
     if (GameActors.lastNpcEncountered === GameActors.bossfight) {
-        Battle.currentEnemy = cloneEnemy(GameLibrary.bossfight[1]);
+        Battle.currentEnemy = cloneEnemy(GameLibrary.bossfight[1], 1);
     }
     
     Battle.currentEnemy.health = Battle.currentEnemy.maxHealth;
@@ -1376,7 +1386,7 @@ function handlePlayerAttack(): void {
         if (GameActors.lastNpcEncountered === GameActors.bossfight && Battle.currentEnemy.name === "Houba") {
             showBattleBanner("Nastupuje Godzilla!", UI_CONFIG.BANNER_PAUSE_LONG);
 
-            Battle.currentEnemy = cloneEnemy(GameLibrary.bossfight[BALANCE_CONFIG.BOSS_GODZILLA_INDEX]);
+            Battle.currentEnemy = cloneEnemy(GameLibrary.bossfight[BALANCE_CONFIG.BOSS_GODZILLA_INDEX], 1);
             Battle.currentEnemy.health = Battle.currentEnemy.maxHealth;
 
             if (UIComponents.enemyBattleSprite) {
