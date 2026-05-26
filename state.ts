@@ -66,7 +66,10 @@ const QuestHelpers = {
     firstQuest: false,
 }
 
-const PlayerState: { [key: string]: PlayerMonster[] } = {
+const PlayerState: {
+    monsterArray: PlayerMonster[],
+    deadPlayerMonsters: PlayerMonster[]
+} = {
     //Hráčovo příšery
     monsterArray: GameLibrary.baseMonsters.map(m => ({
         name: m.name,

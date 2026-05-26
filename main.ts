@@ -106,6 +106,78 @@ function saveGame(): void {
     settings.writeString("save_file", jsonString);
 }
 
+function loadGame(): void {
+    let jsonString = settings.readString("save_file");
+    if (!jsonString) return;
+    let saveObject = JSON.parse(jsonString);
+
+    // --- OBNOVA DAT ---
+    let savedParty: any[] = saveObject.party || [];
+    let savedGraveyard: any[] = saveObject.graveyard || [];
+    let savedQuestProgress: boolean[] = saveObject.questProgress || [];
+
+    PlayerState.monsterArray = [];
+    for (let savedMonster of savedParty) {
+        let base = GameLibrary.baseMonsters.find(monster => monster.name === savedMonster.name);
+        if (base) {
+            PlayerState.monsterArray.push({
+                name: savedMonster.name,
+                health: savedMonster.health,
+                maxHealth: savedMonster.maxHealth,
+                xp: savedMonster.xp,
+                maxXp: savedMonster.maxXp,
+                level: savedMonster.level,
+                minDmg: savedMonster.minDmg,
+                maxDmg: savedMonster.maxDmg,
+                icon: base.icon,
+                gender: base.gender
+            });
+        }
+    }
+
+    PlayerState.deadPlayerMonsters = [];
+    for (let savedMonster of savedGraveyard) {
+        let base = GameLibrary.baseMonsters.find(monster => monster.name === savedMonster.name);
+        if (base) {
+            PlayerState.deadPlayerMonsters.push({
+                name: savedMonster.name,
+                health: savedMonster.health,
+                maxHealth: savedMonster.maxHealth,
+                xp: savedMonster.xp,
+                maxXp: savedMonster.maxXp,
+                level: savedMonster.level,
+                minDmg: savedMonster.minDmg,
+                maxDmg: savedMonster.maxDmg,
+                icon: base.icon,
+                gender: base.gender
+            });
+        }
+    }
+
+
+    for (let i = 0; i < Quests.length; i++) {
+        if (savedQuestProgress[i] !== undefined) {
+            Quests[i].isDone = savedQuestProgress[i];
+        }
+    }
+
+    if (saveObject.helpers) {
+        QuestHelpers.zubCounter = saveObject.helpers.zubCounter || 0;
+        QuestHelpers.level5 = saveObject.helpers.level5 || false;
+        QuestHelpers.firstRevive = saveObject.helpers.firstRevive || false;
+        QuestHelpers.defeatedFirstMon = saveObject.helpers.defeatedFirstMon || false;
+        QuestHelpers.firstQuest = saveObject.helpers.firstQuest || false;
+    }
+
+    MutableVars.defeatedMonsters = saveObject.defeated || [];
+
+    if (hasPlayer() && saveObject.playerX !== undefined) {
+        GameActors.player.setPosition(saveObject.playerX, saveObject.playerY);
+    }
+
+    showBattleBanner("Hra načtena!", UI_CONFIG.BASIC_PAUSE * 2);
+}
+
 function drawInventoryContent(): void {
     const offset = (PlayerState.monsterArray.length - 1) / 2;
     for (let i: number = 0; i < PlayerState.monsterArray.length; i++) {
@@ -204,7 +276,7 @@ function drawQuestsContent(): void {
         let progressWidth = 0;
         let progressText = "";
 
-        if (i === 3) {
+        if (i === QuestId.Zub5) {
             progressWidth = (QuestHelpers.zubCounter / BALANCE_CONFIG.QUEST_ZUB_TARGET) * UI_CONFIG.QUESTS_BAR_WIDTH;
             progressText = `${QuestHelpers.zubCounter}/${BALANCE_CONFIG.QUEST_ZUB_TARGET}`;
         } else {
@@ -228,78 +300,6 @@ function drawQuestsContent(): void {
         writeSmallFont(`+${currentQuest.xpReward} XP`, 131, y + 10, UI_CONFIG.Z_BANNER, SpriteKind.UIText);
         writeSmallFont(progressText, 40, y + 10, UI_CONFIG.Z_BANNER, SpriteKind.UIText);
     }
-}
-
-function loadGame(): void {
-    let jsonString = settings.readString("save_file");
-    if (!jsonString) return;
-    let saveObject = JSON.parse(jsonString);
-
-    // --- OBNOVA DAT ---
-    let savedParty: any[] = saveObject.party || [];
-    let savedGraveyard: any[] = saveObject.graveyard || [];
-    let savedQuestProgress: boolean[] = saveObject.questProgress || [];
-
-    PlayerState.monsterArray = [];  
-    for (let savedMonster of savedParty) {
-        let base = GameLibrary.baseMonsters.find(monster => monster.name === savedMonster.name);
-        if (base) {
-            PlayerState.monsterArray.push({
-                name: savedMonster.name,
-                health: savedMonster.health,
-                maxHealth: savedMonster.maxHealth,
-                xp: savedMonster.xp,
-                maxXp: savedMonster.maxXp,
-                level: savedMonster.level,
-                minDmg: savedMonster.minDmg,
-                maxDmg: savedMonster.maxDmg,
-                icon: base.icon,
-                gender: base.gender
-            });
-        }
-    }
-
-    PlayerState.deadPlayerMonsters = [];
-    for (let savedMonster of savedGraveyard) {
-        let base = GameLibrary.baseMonsters.find(monster => monster.name === savedMonster.name);
-        if (base) {
-            PlayerState.deadPlayerMonsters.push({
-                name: savedMonster.name,
-                health: savedMonster.health,
-                maxHealth: savedMonster.maxHealth,
-                xp: savedMonster.xp,
-                maxXp: savedMonster.maxXp,
-                level: savedMonster.level,
-                minDmg: savedMonster.minDmg,
-                maxDmg: savedMonster.maxDmg,
-                icon: base.icon,
-                gender: base.gender
-            });
-        }
-    }
-
-    
-    for (let i = 0; i < Quests.length; i++) {
-        if (savedQuestProgress[i] !== undefined) {
-            Quests[i].isDone = savedQuestProgress[i];
-        }
-    }
-
-    if (saveObject.helpers) {
-        QuestHelpers.zubCounter = saveObject.helpers.zubCounter || 0;
-        QuestHelpers.level5 = saveObject.helpers.level5 || false;
-        QuestHelpers.firstRevive = saveObject.helpers.firstRevive || false;
-        QuestHelpers.defeatedFirstMon = saveObject.helpers.defeatedFirstMon || false;
-        QuestHelpers.firstQuest = saveObject.helpers.firstQuest || false;
-    }
-
-    MutableVars.defeatedMonsters = saveObject.defeated || [];
-
-    if (hasPlayer() && saveObject.playerX !== undefined) {
-        GameActors.player.setPosition(saveObject.playerX, saveObject.playerY);
-    }
-
-    showBattleBanner("Hra načtena!", UI_CONFIG.BASIC_PAUSE * 2);
 }
 
 function createHealthBarSprite(current: number, max: number, width: number, height: number, x: number, y: number, kind: number, z: number): Sprite {
@@ -403,8 +403,8 @@ function completeQuest(q: Quest) {
         checkLevelUp(monster);
     }
 
-    if (Quests[4] && !Quests[4].isDone && q !== Quests[4]) {
-        completeQuest(Quests[4]);
+    if (Quests[QuestId.FirstQuest] && !Quests[QuestId.FirstQuest].isDone && q !== Quests[QuestId.FirstQuest]) {
+        completeQuest(Quests[QuestId.FirstQuest]);
     }
     
     GameState.isProcessingQuest = false;
@@ -455,8 +455,8 @@ function checkLevelUp(monster: PlayerMonster): void {
 
         showBattleBanner(monster.name + " postoupil na lvl " + monster.level + "!", UI_CONFIG.BANNER_PAUSE_LONG);
         
-        if (monster.level >= 5 && !Quests[1].isDone) {
-            completeQuest(Quests[1]);
+        if (monster.level >= 5 && !Quests[QuestId.Level5].isDone) {
+            completeQuest(Quests[QuestId.Level5]);
         }
     }
 }
@@ -889,13 +889,13 @@ function handlePlayerAttack(): void {
         
         endBattle();
 
-        if (!Quests[2].isDone) {
-            completeQuest(Quests[2]);
+        if (!Quests[QuestId.FirstWin].isDone) {
+            completeQuest(Quests[QuestId.FirstWin]);
         }
 
 
-        if (QuestHelpers.zubCounter >= 5 && !Quests[3].isDone) {
-            completeQuest(Quests[3]);
+        if (QuestHelpers.zubCounter >= 5 && !Quests[QuestId.Zub5].isDone) {
+            completeQuest(Quests[QuestId.Zub5]);
         } 
 
         for (let monster of PlayerState.monsterArray) {
@@ -1050,8 +1050,8 @@ function handleHealer(): void {
             }
             PlayerState.deadPlayerMonsters = [];
 
-            if (!Quests[0].isDone) {
-                completeQuest(Quests[0]);
+            if (!Quests[QuestId.Revive].isDone) {
+                completeQuest(Quests[QuestId.Revive]);
             }
         }
     }

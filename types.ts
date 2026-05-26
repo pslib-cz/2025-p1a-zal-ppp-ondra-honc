@@ -33,6 +33,14 @@ enum MonsterGender {
     N,
 }
 
+enum QuestId {
+    Revive = 0,
+    Level5 = 1,
+    FirstWin = 2,
+    Zub5 = 3,
+    FirstQuest = 4,
+}
+
 type PanelType = "inventory" | "bestiary" | "quests";
 
 type BattleState = {
