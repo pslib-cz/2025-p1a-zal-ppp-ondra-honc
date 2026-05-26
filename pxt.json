@@ -17,6 +17,7 @@
         "library.ts",
         "state.ts",
         "helpers.ts",
+        "loadSave.ts",
         "main.ts",
         "README.md",
         "assets.json"
