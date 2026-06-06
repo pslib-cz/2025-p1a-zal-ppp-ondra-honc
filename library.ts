@@ -25,7 +25,7 @@ const BALANCE_CONFIG: { [key: string]: number } = {
 
 const LOCATIONS = {
     NPC1_LOCATION: [39, 13],
-    BOSSFIGHT_LOCATION: [10, 33],
+    BOSSFIGHT_LOCATION: [11, 32],
     TOWNKEEPER_LOCATION: [19, 18],
     HEALER_LOCATION: [6, 3],
     PLAYER_IN_HOSPITAL: [2, 7],

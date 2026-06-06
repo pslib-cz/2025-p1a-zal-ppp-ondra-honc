@@ -473,6 +473,7 @@ function startFight(): void {
     if (PlayerState.monsterArray.length === 0) return;
     GameState.activeBattle = true;
 
+
     controller.moveSprite(GameActors.player, 0, 0);
     if (GameActors.lastNpcEncountered === null) showBattleBanner("Divoké zvíře se přiblížilo!", UI_CONFIG.BASIC_PAUSE * 3);
     color.startFade(color.originalPalette, color.Black, UI_CONFIG.BASIC_PAUSE);
@@ -485,7 +486,7 @@ function startFight(): void {
     let randomMonsterNumber = randint(0, GameLibrary.wildPool.length - 1);
 
     if (GameActors.lastNpcEncountered === GameActors.npc2) {
-        randomMonsterNumber = BALANCE_CONFIG.NPC2_MONSTER_INDEX;
+        randomMonsterNumber = BALANCE_CONFIG.NPC2_REQUIRED_MONSTER_INDEX;
     }  
     GameActors.player.setFlag(SpriteFlag.Invisible, true);
     tiles.setCurrentTilemap(null);
@@ -634,6 +635,8 @@ function executeAttack(attackerName: string, target: MonsterBase, isPlayerAttack
         damage = Math.round((damage + BALANCE_CONFIG.CRIT_OFFSET) * BALANCE_CONFIG.CRIT_MULTIPLIER);
     }
 
+    damage = Math.floor(damage);
+    
     target.health -= damage;
     if (target.health < (target.maxHealth * UI_CONFIG.LOW_HP_CAMERA_THRESHOLD_PERCENT) / 100) {
         scene.cameraShake(UI_CONFIG.LOW_HP_SHAKE_INTENSITY, UI_CONFIG.BASIC_PAUSE);
