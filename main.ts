@@ -309,11 +309,11 @@ function completeQuest(q: Quest) {
         checkLevelUp(monster);
     }
 
+    GameState.isProcessingQuest = false;
+
     if (Quests[QuestId.FirstQuest] && !Quests[QuestId.FirstQuest].isDone && q !== Quests[QuestId.FirstQuest]) {
         completeQuest(Quests[QuestId.FirstQuest]);
     }
-    
-    GameState.isProcessingQuest = false;
 }
 
 function placeAt(sprite: Sprite | null, location: number[]): void {
