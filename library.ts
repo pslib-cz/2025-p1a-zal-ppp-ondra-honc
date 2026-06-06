@@ -15,7 +15,7 @@ const BALANCE_CONFIG: { [key: string]: number } = {
     XP_MAX: 30,
     QUEST_BONUS: 2, //2x více XP z quest fightů
     XP_LOSS_ON_DEATH: 0.8, //20% ztráta xp na smrti
-    QUEST_MULTIPLY: 2,
+    QUEST_MULTIPLY: 1.5,
     SECONDARY_XP_SHARE: 0.2,
     ENCOUNTER_CHECK_COOLDOWN: 300,
     QUEST_ZUB_TARGET: 5,
@@ -47,12 +47,12 @@ const GameLibrary = {
     //Příšery, které je možné náhodně potkat
     wildPool:
         [
-            { name: "Kačka", maxHealth: 80, health: 80, minDmg: 7, maxDmg: 13, icon: assets.image`duck`, gender: MonsterGender.F },
-            { name: "Zub", maxHealth: 50, health: 50, minDmg: 18, maxDmg: 25, icon: assets.image`shark`, gender: MonsterGender.M },
+            { name: "Kacka", maxHealth: 80, health: 80, minDmg: 7, maxDmg: 13, icon: assets.image`duck`, gender: MonsterGender.F },
+            { name: "Zub", maxHealth: 50, health: 50, minDmg: 15, maxDmg: 20, icon: assets.image`shark`, gender: MonsterGender.M },
             { name: "Zilka", maxHealth: 150, health: 150, minDmg: 5, maxDmg: 10, icon: assets.image`miniGodzilla`, gender: MonsterGender.F },
-            { name: "Mlž", maxHealth: 100, health: 100, minDmg: 6, maxDmg: 12, icon: assets.image`clam`, gender: MonsterGender.F },
+            { name: "Mlz", maxHealth: 100, health: 100, minDmg: 6, maxDmg: 12, icon: assets.image`clam`, gender: MonsterGender.F },
             { name: "Mag", maxHealth: 40, health: 40, minDmg: 20, maxDmg: 35, icon: assets.image`magiTang`, gender: MonsterGender.F },
-            { name: "Upir", maxHealth: 75, health: 75, minDmg: 20, maxDmg: 30, icon: assets.image`bat`, gender: MonsterGender.M },
+            { name: "Upir", maxHealth: 50, health: 50, minDmg: 10, maxDmg: 15, icon: assets.image`bat`, gender: MonsterGender.M },
         ],
     //Bossfighty
     bossfight:
@@ -190,10 +190,10 @@ const attackAnims: { [key: string]: Image[] } = {
     "Had": snakeAttack,
     "Krab": crabAttack,
     "Zub": sharkAttack,
-    "Kačka": duckAttack,
+    "Kacka": duckAttack,
     "Upir": batAttack,
     "Zilka": miniGodzillaAttack,
-    "Mlž": clamAttack,
+    "Mlz": clamAttack,
     "Mag": magicFishAttack,
     "Godzilla": godzillaAttack,
 };
